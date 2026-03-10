@@ -4,7 +4,7 @@ import videos from "@/content/youtube.json";
 
 export default function YouTubeSection() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-16">
+    <section id="youtube" className="mx-auto max-w-5xl px-6 py-16">
       <div className="mb-8 flex items-end justify-between">
         <div>
           <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-gold">

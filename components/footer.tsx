@@ -2,7 +2,7 @@ import { LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-dark-border">
+    <footer id="sns" className="border-t border-dark-border">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 py-8 sm:flex-row sm:justify-between">
         <p className="text-xs text-dark-muted">
           © 2026 buylow. All rights reserved.
