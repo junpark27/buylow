@@ -1,5 +1,6 @@
 import Nav from "@/components/nav";
 import Hero from "@/components/hero";
+import PremiumSection from "@/components/premium-section";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Nav />
       <main className="pt-16">
         <Hero />
+        <PremiumSection />
       </main>
     </>
   );
