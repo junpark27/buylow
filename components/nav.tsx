@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LINKS } from "@/lib/constants";
 
 export default function Nav() {
   return (
@@ -11,9 +12,19 @@ export default function Nav() {
         >
           BUYLOW
         </Link>
-        <button className="rounded-lg border border-dark-border px-4 py-2 text-xs text-dark-muted transition-colors hover:border-white hover:text-white">
-          Log in
-        </button>
+        <div className="flex items-center gap-3">
+          <a
+            href={LINKS.naver_premium}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg bg-gold px-4 py-2 text-xs font-bold text-black transition-colors hover:bg-gold-light"
+          >
+            네프콘 구독
+          </a>
+          <button className="rounded-lg border border-dark-border px-4 py-2 text-xs text-dark-muted transition-colors hover:border-white hover:text-white">
+            Log in
+          </button>
+        </div>
       </div>
     </nav>
   );
