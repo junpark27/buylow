@@ -2,6 +2,7 @@ import Nav from "@/components/nav";
 import Hero from "@/components/hero";
 import PremiumSection from "@/components/premium-section";
 import YouTubeSection from "@/components/youtube-section";
+import BlogSection from "@/components/blog-section";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <PremiumSection />
         <YouTubeSection />
+        <BlogSection />
       </main>
     </>
   );
