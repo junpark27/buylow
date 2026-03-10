@@ -1,16 +1,19 @@
 import { SITE, LINKS } from "@/lib/constants";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center px-6 py-24 text-center md:py-32">
-      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+    <section className="flex flex-col items-center justify-center px-6 py-20 text-center md:py-28">
+      <Image
+        src="/images/logo.jpg"
+        alt="BUYLOW VENTURES"
+        width={500}
+        height={280}
+        className="mb-6 rounded-lg"
+        priority
+      />
+      <p className="mb-8 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
         {SITE.tagline}
-      </p>
-      <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-tight md:text-5xl">
-        {SITE.description}
-      </h1>
-      <p className="mb-8 text-base text-dark-muted md:text-lg">
-        {SITE.subtitle}
       </p>
       <div className="flex gap-4">
         <a

@@ -24,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="ko" className="dark">
       <body className={`${inter.className} bg-dark text-white antialiased`}>
-        <Sidebar />
-        <div className="md:ml-20">
-          {children}
+        <div className="mx-auto max-w-7xl">
+          <Sidebar />
+          <div className="md:ml-20">
+            {children}
+          </div>
         </div>
       </body>
     </html>
