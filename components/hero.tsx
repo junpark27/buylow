@@ -1,4 +1,4 @@
-import { SITE, LINKS } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -6,38 +6,26 @@ export default function Hero() {
       <div className="mb-6">
         <h1
           className="text-5xl font-extrabold tracking-wide md:text-7xl"
-          style={{ fontFamily: 'var(--font-playfair), serif' }}
+          style={{ fontFamily: "var(--font-playfair), serif" }}
         >
           BUYLOW
         </h1>
         <p
           className="mt-1 text-sm tracking-[0.4em] text-dark-muted md:text-base"
-          style={{ fontFamily: 'var(--font-playfair), serif' }}
+          style={{ fontFamily: "var(--font-playfair), serif" }}
         >
           VENTURES
         </p>
       </div>
-      <p className="mb-8 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+      <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
         {SITE.tagline}
       </p>
-      <div className="flex gap-4">
-        <a
-          href={LINKS.naver_premium}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-lg bg-gold px-6 py-3 text-sm font-bold text-black transition-colors hover:bg-gold-light"
-        >
-          네프콘 구독
-        </a>
-        <a
-          href={LINKS.youtube}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-lg border border-gold/30 bg-gold/10 px-6 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold/20"
-        >
-          YouTube
-        </a>
-      </div>
+      <p className="max-w-xl text-sm leading-relaxed text-dark-muted md:text-base">
+        {SITE.description}
+      </p>
+      <p className="mt-2 text-sm text-dark-muted md:text-base">
+        {SITE.subtitle}
+      </p>
     </section>
   );
 }
