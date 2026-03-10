@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import PremiumSection from "@/components/premium-section";
 import YouTubeSection from "@/components/youtube-section";
 import BlogSection from "@/components/blog-section";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <YouTubeSection />
         <BlogSection />
       </main>
+      <Footer />
     </>
   );
 }

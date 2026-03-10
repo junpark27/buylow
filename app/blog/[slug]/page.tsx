@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Nav from "@/components/nav";
+import Footer from "@/components/footer";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 
 export function generateStaticParams() {
@@ -52,6 +53,7 @@ export default async function BlogPostPage({
           <MDXRemote source={post.content} />
         </article>
       </main>
+      <Footer />
     </>
   );
 }
