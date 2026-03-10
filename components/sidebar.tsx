@@ -60,14 +60,7 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="fixed left-0 top-0 z-40 hidden h-full w-20 flex-col items-center border-r border-dark-border bg-dark-card py-6 md:flex">
-      <Link
-        href="/"
-        className="mb-8 text-xs font-extrabold tracking-tight text-gold"
-        style={{ writingMode: "vertical-lr", transform: "rotate(180deg)", letterSpacing: "0.15em" }}
-      >
-        buylow
-      </Link>
+    <aside className="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-16 flex-col items-center self-start border-r border-dark-border bg-dark-card py-6 md:flex">
       <nav className="flex flex-1 flex-col items-center gap-1">
         {navItems.map((item) => (
           <a

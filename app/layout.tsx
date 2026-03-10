@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
+import Nav from "@/components/nav";
 
 const inter = Inter({ subsets: ["latin"] });
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["700", "800"] });
 
 export const metadata: Metadata = {
   title: "buylow — zero to one",
@@ -23,11 +25,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="dark">
-      <body className={`${inter.className} bg-dark text-white antialiased`}>
+      <body
+        className={`${inter.className} bg-dark text-white antialiased`}
+        style={{ '--font-playfair': playfair.style.fontFamily } as React.CSSProperties}
+      >
+        <Nav />
         <div className="mx-auto max-w-7xl">
-          <Sidebar />
-          <div className="md:ml-20">
-            {children}
+          <div className="flex">
+            <Sidebar />
+            <div className="flex-1 pt-14">
+              {children}
+            </div>
           </div>
         </div>
       </body>
