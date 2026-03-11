@@ -78,10 +78,13 @@ export default function Footer() {
         {/* Disclaimer */}
         <div className="mt-8 border-t border-dark-border pt-6">
           <p className="text-center text-xs leading-relaxed text-dark-muted/60">
-            본 웹사이트에서 제공하는 정보는 교육 및 정보 제공 목적으로만
-            제공되며, 금융, 투자, 법률 또는 세무 자문을 구성하지 않습니다.
-            투자 결정에 대한 책임은 전적으로 본인에게 있으며, 과거의 성과가
-            미래의 결과를 보장하지 않습니다.
+            면책 조항: 본 웹사이트에서 제공하는 정보는 교육 및 정보 제공
+            목적으로만 제공되며, 금융, 투자, 법률 또는 세무 자문을 구성하지
+            않습니다. BUYLOW는 공인 재무 자문사가 아닙니다. 모든 콘텐츠는
+            정확성이나 완전성에 대한 보증 없이 공유됩니다. 투자 결정에 대한
+            책임은 전적으로 본인에게 있으며, 투자 전 반드시 스스로 조사하고
+            전문가와 상담하시기 바랍니다. 과거의 성과가 미래의 결과를
+            보장하지 않습니다.
           </p>
           <p className="mt-4 text-center text-xs text-dark-muted/40">
             © 2026 buylow. All rights reserved.
