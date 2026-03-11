@@ -13,10 +13,8 @@ function getSql() {
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export async function query(text: string, values?: any[]) {
   const sql = getSql();
-  // neon() supports regular function call: sql(query, params)
-  // TypeScript types only expose tagged template, so we cast
-  const fn = sql as unknown as (text: string, params?: unknown[]) => Promise<any[]>;
-  const rows = await fn(text, values);
+  // Use sql.query() for conventional function calls with $1 placeholders
+  const rows = await (sql as any).query(text, values);
   return { rows };
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
