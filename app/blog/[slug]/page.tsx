@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostBySlug } from "@/lib/blog";
 import { db } from "@/lib/db";
+import BlogPostClient from "./BlogPostClient";
 
 async function getPost(slug: string) {
   // Try DB first
@@ -18,7 +18,11 @@ async function getPost(slug: string) {
         description: row.description,
         tags: row.tags ?? [],
         content: row.content,
-        date: new Date(row.created_at).toLocaleDateString("ko-KR"),
+        date: new Date(row.created_at).toLocaleDateString("ko-KR", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }),
       };
     }
   } catch {
@@ -53,24 +57,13 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <main className="mx-auto max-w-3xl px-6 pt-24 pb-16">
-      <div className="mb-6">
-        <div className="mb-3 flex items-center gap-3">
-          <time className="text-xs text-dark-muted">{post.date}</time>
-          {post.tags.map((tag: string) => (
-            <span
-              key={tag}
-              className="rounded bg-gold/10 px-2 py-0.5 text-xs text-gold"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <h1 className="text-3xl font-extrabold">{post.title}</h1>
-      </div>
-      <article className="prose prose-invert max-w-none prose-headings:text-white prose-a:text-gold">
-        <MDXRemote source={post.content} />
-      </article>
-    </main>
+    <BlogPostClient
+      title={post.title}
+      description={post.description}
+      date={post.date}
+      tags={post.tags}
+      content={post.content}
+      slug={slug}
+    />
   );
 }

@@ -32,13 +32,9 @@ export default function RootLayout({
       >
         <Providers>
           <Nav />
-          <div className="mx-auto max-w-7xl">
-            <div className="flex">
-              <Sidebar />
-              <div className="flex-1 pt-14">
-                {children}
-              </div>
-            </div>
+          <Sidebar />
+          <div className="md:ml-16 pt-14">
+            {children}
           </div>
         </Providers>
       </body>

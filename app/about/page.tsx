@@ -1,22 +1,49 @@
-import Hero from "@/components/hero";
-import FaqSection from "@/components/faq-section";
-import Footer from "@/components/footer";
 import ScrollReveal from "@/components/scroll-reveal";
+import Footer from "@/components/footer";
+import { LINKS } from "@/lib/constants";
 
-export default function Home() {
+export const metadata = {
+  title: "About — buylow",
+  description:
+    "맨손으로 시드를 만드는 실행부터, 자산을 지키고 불리는 통찰까지. buylow 채널 소개.",
+};
+
+export default function AboutPage() {
   return (
     <>
-      <main className="pt-2">
-        <Hero />
+      <main>
+        {/* Hero */}
+        <section className="relative overflow-hidden px-6 pb-12 pt-20">
+          <div className="absolute inset-0 bg-gradient-to-b from-gold/5 via-transparent to-transparent" />
+          <div className="relative mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gold">
+              About
+            </p>
+            <h1
+              className="text-3xl font-extrabold md:text-4xl"
+              style={{ fontFamily: "var(--font-playfair), serif" }}
+            >
+              About BUYLOW
+            </h1>
+            <p className="mt-4 text-sm leading-relaxed text-dark-muted md:text-base">
+              복잡한 차트 분석, 그 너머의 투자를 지향합니다.
+            </p>
+          </div>
+        </section>
 
-        {/* Main content area with subtle bg difference */}
         <div className="rounded-t-3xl bg-[#111118]">
-          {/* Intro */}
+          {/* Channel Description */}
           <ScrollReveal>
-            <section id="about" className="mx-auto max-w-2xl px-6 py-16">
+            <section className="mx-auto max-w-2xl px-6 py-16">
               <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-gold">
-                About
+                Channel
               </p>
+              <h2
+                className="mb-6 text-xl font-extrabold md:text-2xl"
+                style={{ fontFamily: "var(--font-playfair), serif" }}
+              >
+                채널 소개
+              </h2>
               <p className="text-sm leading-relaxed text-dark-muted md:text-base">
                 맨손으로 시드를 만드는 &apos;실행&apos;부터, 자산을 지키고
                 불리는 &apos;통찰&apos;까지.
@@ -33,12 +60,18 @@ export default function Home() {
             </section>
           </ScrollReveal>
 
-          {/* Part 1 & Part 2 */}
+          {/* Roadmap */}
           <ScrollReveal>
             <section className="mx-auto max-w-2xl px-6 pb-16">
               <p className="mb-8 text-xs font-semibold uppercase tracking-widest text-gold">
                 Roadmap
               </p>
+              <h2
+                className="mb-6 text-xl font-extrabold md:text-2xl"
+                style={{ fontFamily: "var(--font-playfair), serif" }}
+              >
+                실전 투자 로드맵
+              </h2>
               <p className="mb-10 text-sm leading-relaxed text-dark-muted md:text-base">
                 본 채널은 &apos;자본이 부족한 투자자&apos;가 &apos;스스로 부의
                 사이클을 만드는 자산가&apos;로 성장하기 위해 필요한 모든 과정을
@@ -50,6 +83,7 @@ export default function Home() {
               </p>
 
               <div className="space-y-6">
+                {/* Part 1 */}
                 <div className="rounded-2xl border border-dark-border bg-dark-card p-6 md:p-8">
                   <div className="mb-4 flex items-center gap-3">
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/15 text-lg font-extrabold text-gold">
@@ -78,6 +112,7 @@ export default function Home() {
                   </ul>
                 </div>
 
+                {/* Part 2 */}
                 <div className="rounded-2xl border border-dark-border bg-dark-card p-6 md:p-8">
                   <div className="mb-4 flex items-center gap-3">
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/15 text-lg font-extrabold text-gold">
@@ -107,6 +142,7 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Goal */}
               <div className="mt-10 rounded-2xl border border-gold/20 bg-gold/5 p-6 md:p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-gold">
                   Goal
@@ -123,13 +159,16 @@ export default function Home() {
             </section>
           </ScrollReveal>
 
-          {/* Differentiators */}
+          {/* Why Different */}
           <ScrollReveal>
-            <section id="difference" className="mx-auto max-w-2xl px-6 pb-16">
+            <section className="mx-auto max-w-2xl px-6 pb-16">
               <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-gold">
                 Why Different
               </p>
-              <h2 className="mb-6 text-xl font-extrabold md:text-2xl">
+              <h2
+                className="mb-6 text-xl font-extrabold md:text-2xl"
+                style={{ fontFamily: "var(--font-playfair), serif" }}
+              >
                 다른 채널과 차별점
               </h2>
               <p className="mb-8 text-sm leading-relaxed text-dark-muted md:text-base">
@@ -174,78 +213,42 @@ export default function Home() {
             </section>
           </ScrollReveal>
 
-          {/* YouTube */}
+          {/* CTA */}
           <ScrollReveal>
-            <section id="youtube" className="mx-auto max-w-2xl px-6 pb-16">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-gold">
-                YouTube
-              </p>
-              <h2 className="mb-4 text-xl font-extrabold md:text-2xl">
-                영상 콘텐츠
-              </h2>
-              <p className="mb-6 text-sm leading-relaxed text-dark-muted md:text-base">
-                글로는 전달하기 어려운 시황 해설, 실전 트레이딩 과정, 에어드랍
-                튜토리얼을 영상으로 공유합니다. 채널을 리뉴얼하여 곧 새로운
-                시리즈로 찾아갑니다.
-              </p>
-              <div className="overflow-hidden rounded-2xl border border-dark-border bg-dark-card">
-                <div className="flex items-center justify-center bg-gradient-to-br from-[#1a1a2e] to-[#16213e] py-16">
-                  <div className="flex flex-col items-center gap-3">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold/20">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6 text-gold"
-                      >
-                        <polygon points="10 8 16 12 10 16 10 8" />
-                      </svg>
-                    </div>
-                    <p className="text-sm font-medium text-dark-muted">
-                      Coming Soon
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* Premium */}
-          <ScrollReveal>
-            <section id="premium" className="mx-auto max-w-2xl px-6 pb-16">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-gold">
-                Premium
-              </p>
-              <h2 className="mb-4 text-xl font-extrabold md:text-2xl">
-                네이버 프리미엄 콘텐츠
-              </h2>
-              <p className="mb-6 text-sm leading-relaxed text-dark-muted md:text-base">
-                무자본 시드 확보 전략, 온체인 데이터 분석, 트레이딩 심리
-                프레임워크 등 깊이 있는 리서치를 연재합니다. 단순 시그널이
-                아닌, 스스로 판단할 수 있는 투자 안목을 키워드립니다.
-              </p>
-              <div className="space-y-3">
-                {[
-                  "에어드랍 시드 확보 전략 — 2026 Q1",
-                  "트레이딩 마인드셋: 손절을 잘하는 법",
-                  "온체인 데이터로 읽는 시장 흐름",
-                ].map((title, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 rounded-xl border border-dark-border bg-dark-card p-4"
+            <section className="mx-auto max-w-2xl px-6 pb-20">
+              <div className="rounded-2xl border border-gold/20 bg-gradient-to-br from-gold/10 via-gold/5 to-transparent p-8 text-center md:p-12">
+                <h2
+                  className="mb-4 text-xl font-extrabold md:text-2xl"
+                  style={{ fontFamily: "var(--font-playfair), serif" }}
+                >
+                  함께 성장할 준비가 되셨나요?
+                </h2>
+                <p className="mb-6 text-sm leading-relaxed text-dark-muted md:text-base">
+                  네이버 프리미엄 콘텐츠에서 심층 리서치와 실전 전략을
+                  만나보세요.
+                </p>
+                <a
+                  href={LINKS.naver_premium}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3 text-sm font-bold text-black transition-colors hover:bg-gold/90"
+                >
+                  구독하기
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="h-4 w-4"
                   >
-                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-md bg-gold/15 text-xs font-bold text-gold">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-sm font-medium">{title}</span>
-                  </div>
-                ))}
+                    <path
+                      fillRule="evenodd"
+                      d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </a>
               </div>
             </section>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <FaqSection />
           </ScrollReveal>
         </div>
       </main>
