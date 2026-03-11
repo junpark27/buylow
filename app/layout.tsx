@@ -34,8 +34,8 @@ export default function RootLayout({
           <Nav />
           <Sidebar />
           {/* Right spacer sidebar for symmetry */}
-          <div className="fixed right-0 top-14 z-40 hidden h-[calc(100vh-3.5rem)] w-48 border-l border-dark-border/50 lg:block" />
-          <div className="pt-14 lg:px-48">
+          <div className="fixed right-0 top-14 z-40 hidden h-[calc(100vh-3.5rem)] w-80 border-l border-dark-border/50 lg:block" />
+          <div className="pt-14 lg:px-80">
             {children}
           </div>
         </Providers>
