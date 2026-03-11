@@ -6,7 +6,7 @@ import Nav from "@/components/nav";
 import Providers from "@/components/providers";
 
 const inter = Inter({ subsets: ["latin"] });
-const playfair = Playfair_Display({ subsets: ["latin"], weight: ["700", "800"] });
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "700", "800"] });
 
 export const metadata: Metadata = {
   title: "buylow — zero to one",

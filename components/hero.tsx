@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="flex flex-col items-center justify-center px-6 py-20 text-center md:py-28">
       <h1
-        className="mb-6 text-5xl font-extrabold tracking-wide md:text-7xl"
+        className="mb-6 text-5xl font-normal tracking-wide md:text-7xl"
         style={{ fontFamily: "var(--font-playfair), serif" }}
       >
         BUYLOW

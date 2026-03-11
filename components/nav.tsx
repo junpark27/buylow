@@ -8,7 +8,7 @@ export default function Nav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link
           href="/"
-          className="text-lg font-extrabold tracking-wide"
+          className="text-lg font-normal tracking-wide"
           style={{ fontFamily: "var(--font-playfair), serif" }}
         >
           BUYLOW

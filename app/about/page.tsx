@@ -20,7 +20,7 @@ export default function AboutPage() {
               About
             </p>
             <h1
-              className="text-3xl font-extrabold md:text-4xl"
+              className="text-3xl font-normal md:text-4xl"
               style={{ fontFamily: "var(--font-playfair), serif" }}
             >
               About BUYLOW
