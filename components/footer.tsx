@@ -1,4 +1,4 @@
-import { LINKS } from "@/lib/constants";
+import { LINKS, BLOG_TOPICS } from "@/lib/constants";
 
 const sitemap = [
   {
@@ -11,18 +11,16 @@ const sitemap = [
   },
   {
     title: "Topics",
-    links: [
-      { label: "에어드랍 가이드", href: "/blog", external: false },
-      { label: "트레이딩 마인드셋", href: "/blog", external: false },
-      { label: "시황 분석", href: "/blog", external: false },
-      { label: "온체인 데이터", href: "/blog", external: false },
-    ],
+    links: BLOG_TOPICS.map((t) => ({
+      label: t.label,
+      href: `/blog/topic/${t.slug}`,
+      external: false,
+    })),
   },
   {
     title: "BUYLOW",
     links: [
-      { label: "About", href: "#about", external: false },
-      { label: "FAQ", href: "#faq", external: false },
+      { label: "About", href: "/about", external: false },
       { label: "Contact", href: "#", external: false },
     ],
   },

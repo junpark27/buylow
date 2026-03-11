@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import { LINKS } from "@/lib/constants";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { LINKS, BLOG_TOPICS } from "@/lib/constants";
 
 const navItems = [
   {
@@ -38,6 +42,7 @@ const navItems = [
     href: "/blog",
     label: "Blog",
     external: false,
+    hasSubmenu: true,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -62,11 +67,64 @@ const navItems = [
 ];
 
 export default function Sidebar() {
+  const pathname = usePathname();
+  const [blogOpen, setBlogOpen] = useState(pathname.startsWith("/blog"));
+
   return (
     <aside className="fixed left-0 top-14 z-40 hidden h-[calc(100vh-3.5rem)] w-80 flex-col items-center border-r border-dark-border/50 py-6 pl-40 lg:flex">
       <nav className="flex flex-1 flex-col items-center gap-1">
-        {navItems.map((item) =>
-          item.external ? (
+        {navItems.map((item) => {
+          const isActive =
+            item.href === "/"
+              ? pathname === "/"
+              : !item.external && pathname.startsWith(item.href);
+
+          if ("hasSubmenu" in item && item.hasSubmenu) {
+            return (
+              <div key={item.label} className="flex flex-col items-center">
+                <button
+                  onClick={() => setBlogOpen(!blogOpen)}
+                  className={`group flex flex-col items-center gap-1 rounded-lg px-2 py-3 transition-colors ${
+                    isActive ? "text-gold" : "text-dark-muted hover:text-gold"
+                  }`}
+                >
+                  {item.icon}
+                  <span className="text-[10px] font-medium leading-none">
+                    {item.label}
+                  </span>
+                </button>
+                {blogOpen && (
+                  <div className="mt-1 flex flex-col items-center gap-0.5">
+                    <Link
+                      href="/blog"
+                      className={`rounded px-2 py-1.5 text-[10px] transition-colors ${
+                        pathname === "/blog"
+                          ? "text-gold"
+                          : "text-dark-muted hover:text-gold"
+                      }`}
+                    >
+                      전체 글
+                    </Link>
+                    {BLOG_TOPICS.map((topic) => (
+                      <Link
+                        key={topic.slug}
+                        href={`/blog/topic/${topic.slug}`}
+                        className={`rounded px-2 py-1.5 text-[10px] transition-colors ${
+                          pathname === `/blog/topic/${topic.slug}`
+                            ? "text-gold"
+                            : "text-dark-muted hover:text-gold"
+                        }`}
+                      >
+                        {topic.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          }
+
+          return item.external ? (
             <a
               key={item.label}
               href={item.href}
@@ -83,15 +141,17 @@ export default function Sidebar() {
             <Link
               key={item.label}
               href={item.href}
-              className="group flex flex-col items-center gap-1 rounded-lg px-2 py-3 text-dark-muted transition-colors hover:text-gold"
+              className={`group flex flex-col items-center gap-1 rounded-lg px-2 py-3 transition-colors ${
+                isActive ? "text-gold" : "text-dark-muted hover:text-gold"
+              }`}
             >
               {item.icon}
               <span className="text-[10px] font-medium leading-none">
                 {item.label}
               </span>
             </Link>
-          )
-        )}
+          );
+        })}
       </nav>
     </aside>
   );
