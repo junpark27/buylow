@@ -63,7 +63,7 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="fixed left-0 top-14 z-40 hidden h-[calc(100vh-3.5rem)] w-16 flex-col items-center border-r border-dark-border/50 py-6 md:flex">
+    <aside className="fixed left-0 top-14 z-40 hidden h-[calc(100vh-3.5rem)] w-48 flex-col items-center border-r border-dark-border/50 py-6 lg:flex">
       <nav className="flex flex-1 flex-col items-center gap-1">
         {navItems.map((item) =>
           item.external ? (
