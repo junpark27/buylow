@@ -64,20 +64,12 @@ export default function Footer() {
             >
               About
             </Link>
-            <a
-              href={LINKS.naver_premium}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-dark-muted transition-colors hover:text-gold"
-            >
-              네프콘 구독
-            </a>
           </div>
         </div>
 
         {/* Disclaimer */}
         <div className="mt-8 border-t border-dark-border pt-6">
-          <p className="text-center text-xs leading-relaxed text-dark-muted/60">
+          <p className="text-[10px] leading-relaxed text-dark-muted/40">
             면책 조항: 본 웹사이트에서 제공하는 정보는 교육 및 정보 제공
             목적으로만 제공되며, 금융, 투자, 법률 또는 세무 자문을 구성하지
             않습니다. BUYLOW는 공인 재무 자문사가 아닙니다. 모든 콘텐츠는
@@ -86,7 +78,7 @@ export default function Footer() {
             전문가와 상담하시기 바랍니다. 과거의 성과가 미래의 결과를
             보장하지 않습니다.
           </p>
-          <p className="mt-4 text-center text-xs text-dark-muted/40">
+          <p className="mt-3 text-[10px] text-dark-muted/30">
             © 2026 buylow. All rights reserved.
           </p>
         </div>
