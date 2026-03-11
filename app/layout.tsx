@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import Nav from "@/components/nav";
+import Providers from "@/components/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["700", "800"] });
@@ -29,15 +30,17 @@ export default function RootLayout({
         className={`${inter.className} bg-dark text-white antialiased`}
         style={{ '--font-playfair': playfair.style.fontFamily } as React.CSSProperties}
       >
-        <Nav />
-        <div className="mx-auto max-w-7xl">
-          <div className="flex">
-            <Sidebar />
-            <div className="flex-1 pt-14">
-              {children}
+        <Providers>
+          <Nav />
+          <div className="mx-auto max-w-7xl">
+            <div className="flex">
+              <Sidebar />
+              <div className="flex-1 pt-14">
+                {children}
+              </div>
             </div>
           </div>
-        </div>
+        </Providers>
       </body>
     </html>
   );

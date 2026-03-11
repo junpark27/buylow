@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LINKS } from "@/lib/constants";
+import AuthButton from "@/components/auth-button";
 
 export default function Nav() {
   return (
@@ -21,9 +22,7 @@ export default function Nav() {
           >
             네프콘 구독
           </a>
-          <button className="rounded-lg border border-dark-border px-4 py-2 text-xs text-dark-muted transition-colors hover:border-white hover:text-white">
-            Log in
-          </button>
+          <AuthButton />
         </div>
       </div>
     </nav>
