@@ -2,14 +2,6 @@ import { LINKS, BLOG_TOPICS } from "@/lib/constants";
 
 const sitemap = [
   {
-    title: "Content",
-    links: [
-      { label: "네프콘", href: LINKS.naver_premium, external: true },
-      { label: "YouTube", href: LINKS.youtube, external: true },
-      { label: "Blog", href: "/blog", external: false },
-    ],
-  },
-  {
     title: "Topics",
     links: BLOG_TOPICS.map((t) => ({
       label: t.label,
@@ -21,7 +13,6 @@ const sitemap = [
     title: "BUYLOW",
     links: [
       { label: "About", href: "/about", external: false },
-      { label: "Contact", href: "#", external: false },
     ],
   },
 ];

@@ -44,18 +44,14 @@ export default function AboutPage() {
               >
                 채널 소개
               </h2>
-              <p className="text-sm leading-relaxed text-dark-muted md:text-base">
-                맨손으로 시드를 만드는 &apos;실행&apos;부터, 자산을 지키고
-                불리는 &apos;통찰&apos;까지.
-              </p>
-              <p className="mt-3 text-base font-bold leading-relaxed md:text-lg">
-                복잡한 차트 분석, 그 너머의 투자를 지향합니다.
+              <p className="text-base font-bold leading-relaxed md:text-lg">
+                누구나 투자를 말하지만, 시드 만드는 법은 아무도 알려주지
+                않습니다. 우리는 거기서부터 시작합니다.
               </p>
               <p className="mt-3 text-sm leading-relaxed text-dark-muted md:text-base">
-                무자본으로 시작하는 실전 시드 확보 전략과, 거시 경제와 시장의
-                심리를 꿰뚫는 상위 1%의 투자 인사이트. 바닥을 훑는 실행력과
-                흐름을 읽는 안목을 모두 갖춘, 가장 현실적인 부의 공략집을
-                연재합니다.
+                무자본으로 시작하는 실전 시드 확보 전략부터, 거시 경제와
+                시장 심리를 꿰뚫는 투자 인사이트까지. 실행력과 안목을 함께
+                키워드리는, 가장 현실적인 부의 공략집입니다.
               </p>
             </section>
           </ScrollReveal>
@@ -73,13 +69,8 @@ export default function AboutPage() {
                 실전 투자 로드맵
               </h2>
               <p className="mb-10 text-sm leading-relaxed text-dark-muted md:text-base">
-                본 채널은 &apos;자본이 부족한 투자자&apos;가 &apos;스스로 부의
-                사이클을 만드는 자산가&apos;로 성장하기 위해 필요한 모든 과정을
-                A to Z로 다루는{" "}
-                <span className="font-bold text-white">
-                  실전 투자 로드맵
-                </span>
-                입니다.
+                &apos;자본이 부족한 투자자&apos;가 &apos;부의 사이클을 직접
+                만드는 자산가&apos;로 성장하는 과정을 A to Z로 다룹니다.
               </p>
 
               <div className="space-y-6">
@@ -131,7 +122,7 @@ export default function AboutPage() {
                   <ul className="space-y-3 text-sm leading-relaxed text-dark-muted md:text-base">
                     <li>
                       어렵게 모은 시드를 허무하게 잃지 않도록, 전체 시장의
-                      흐름(Macro)과 돈이 몰리는 섹터(Meta)를 분석합니다.
+                      흐름과 돈이 몰리는 섹터를 분석합니다.
                     </li>
                     <li>
                       복잡한 기술적 분석 대신, 대중 심리 이용, 리스크 관리,
@@ -148,12 +139,11 @@ export default function AboutPage() {
                   Goal
                 </p>
                 <p className="text-sm leading-relaxed text-dark-muted md:text-base">
-                  구독자들이 Part 1의 방법으로 투자금을 스스로 조달하고, Part
-                  2의 인사이트를 통해 이를 안정적으로 증식시키는{" "}
+                  시드 확보부터 자산 증식까지, 누군가에게 의존하지 않는{" "}
                   <span className="font-bold text-white">
-                    완결성 있는 투자 생태계
+                    나만의 투자 시스템
                   </span>
-                  를 경험하게 하는 것입니다.
+                  을 완성하는 것. 그것이 BUYLOW가 지향하는 목표입니다.
                 </p>
               </div>
             </section>
@@ -173,7 +163,7 @@ export default function AboutPage() {
               </h2>
               <p className="mb-8 text-sm leading-relaxed text-dark-muted md:text-base">
                 기존 재테크 채널들은 &apos;무조건적인 절약&apos;을 강조하거나,
-                일반인이 따라 하기 힘든 &apos;전문 지식(차트)&apos;에만 치우쳐
+                일반인이 따라 하기 힘든 &apos;전문 지식&apos;에만 치우쳐
                 있습니다.
               </p>
               <div className="space-y-6">
@@ -183,14 +173,14 @@ export default function AboutPage() {
                   </span>
                   <div>
                     <h3 className="mb-2 font-bold">
-                      기술과 관점의 완벽한 결합
+                      실행과 인사이트를 동시에
                     </h3>
                     <p className="text-sm leading-relaxed text-dark-muted">
                       파밍 정보를 주는 곳은 인사이트가 부재하고, 인사이트를 주는
                       곳은 당장 돈 벌 구체적 방법이 없습니다. 이 채널은
                       &quot;당장 오늘 실행할 일&quot;과 &quot;앞으로 나아갈
-                      방향&quot;을 동시에 제공하여, 독자가 중도 이탈하지 않고
-                      성장할 수 있습니다.
+                      방향&quot;을 동시에 제공하여, 실행하면서 동시에 성장할
+                      수 있습니다.
                     </p>
                   </div>
                 </div>
