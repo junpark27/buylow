@@ -1,21 +1,15 @@
-import { neon } from "@neondatabase/serverless";
+import { Pool } from "pg";
 
-// Vercel Postgres (now Neon) env vars have "buylow_" prefix
-let _sql: ReturnType<typeof neon> | null = null;
-
-function getSql() {
-  if (!_sql) {
-    _sql = neon(process.env.buylow_POSTGRES_URL!);
-  }
-  return _sql;
-}
+// Vercel Postgres env vars have "buylow_" prefix
+const pool = new Pool({
+  connectionString: process.env.buylow_POSTGRES_URL,
+  ssl: { rejectUnauthorized: false },
+});
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export async function query(text: string, values?: any[]) {
-  const sql = getSql();
-  // Use sql.query() for conventional function calls with $1 placeholders
-  const rows = await (sql as any).query(text, values);
-  return { rows };
+  const result = await pool.query(text, values);
+  return result; // { rows, rowCount, ... }
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 

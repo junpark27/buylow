@@ -1,19 +1,8 @@
 import { NextResponse } from "next/server";
+import { db } from "@/lib/db";
 
 export async function POST() {
   try {
-    // Check env var exists
-    const dbUrl = process.env.buylow_DATABASE_URL;
-    if (!dbUrl) {
-      return NextResponse.json(
-        { error: "buylow_DATABASE_URL not set" },
-        { status: 500 }
-      );
-    }
-
-    // Dynamic import to catch module-level errors
-    const { db } = await import("@/lib/db");
-
     // Create admins table
     await db.query(`
       CREATE TABLE IF NOT EXISTS admins (
@@ -40,13 +29,8 @@ export async function POST() {
     `);
 
     return NextResponse.json({ success: true });
-  } catch (error: unknown) {
-    const message =
-      error instanceof Error
-        ? error.message + " | " + error.stack
-        : typeof error === "string"
-          ? error
-          : JSON.stringify(error, Object.getOwnPropertyNames(error as object));
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
