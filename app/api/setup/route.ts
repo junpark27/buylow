@@ -30,6 +30,7 @@ export async function POST() {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({ error: String(error) }, { status: 500 });
+    const message = error instanceof Error ? error.message : JSON.stringify(error);
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
