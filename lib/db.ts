@@ -5,7 +5,7 @@ let _sql: ReturnType<typeof neon> | null = null;
 
 function getSql() {
   if (!_sql) {
-    _sql = neon(process.env.buylow_DATABASE_URL!);
+    _sql = neon(process.env.buylow_POSTGRES_URL!);
   }
   return _sql;
 }
